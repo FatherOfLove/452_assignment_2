@@ -36,7 +36,12 @@ bool AES::setKey(const unsigned char* keyArray)
     //for (i = )
 
     unsigned char* key = new unsigned char[16];
-    strncpy(key,((char*)keyArray)+1, 16);
+    //strncpy(key,((char*)keyArray)+1, 16);
+    for (int i =1; i < 17; i++){
+        key[i - 1] = keyArray[i];
+    }
+
+	
     if (keyArray[0] == '0')
     {
         if (AES_set_encrypt_key(key, 128, &(this ->enc_key)) !=0){
