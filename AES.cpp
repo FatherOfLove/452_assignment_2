@@ -40,19 +40,19 @@ bool AES::setKey(const unsigned char* keyArray)
     if (keyArray[0] == '0')
     {
         if (AES_set_encrypt_key(key, 128, &(this ->enc_key)) !=0){
-            fprintf(stderr, "ERROR [%s %s %d]: encrypt key is failed!.\n");
+            fprintf(stderr, "ERROR [%s %s %d]: encrypt key has failed!.\n");
             return false;
         }
-        fprintf(stderr, "encrypt key is succeed!.\n");
+        fprintf(stderr, "encrypt key has succeeded!.\n");
         return true;
     }
     else if (keyArray[0] == '1')
     {
         if (AES_set_encrypt_key(key, 128, &(this ->dec_key)) !=0){
-            fprintf(stderr, "ERROR [%s %s %d]: decrypt key is failed!.\n");
+            fprintf(stderr, "ERROR [%s %s %d]: decrypt key has failed!.\n");
             return false;
         }
-        fprintf(stderr, "decrypt key is succeed!.\n");
+        fprintf(stderr, "decrypt key has succeeded!.\n");
         return true;
     }
     else
